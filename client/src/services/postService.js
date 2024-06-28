@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/api/posts";
+const API_URL = "https://cloud-sek-assignment.vercel.app/api/posts";
 
 const getPosts = () => axios.get(API_URL);
 const getPostById = (id) => axios.get(`${API_URL}/${id}`);
