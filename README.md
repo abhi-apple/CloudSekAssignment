@@ -2,7 +2,7 @@
 
 ## Overview
 
-Briefly describe your project and its purpose.
+Briefly description of project .
 
 ## Setup Instructions
 
