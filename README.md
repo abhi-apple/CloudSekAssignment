@@ -40,3 +40,8 @@ No need of any env variables , I have added them directly in the code for now
 ```
 npm run dev
 ```
+
+4. **Hosted Link:**
+```
+   https://cloud-sek-assignment-z98v.vercel.app/
+```
