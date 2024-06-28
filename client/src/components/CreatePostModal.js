@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import postService from "../services/postService";
+import AuthService from "../services/authService";
 
 const CreatePostModal = ({ isOpen, onClose, addPost }) => {
   const [title, setTitle] = useState("");
@@ -7,8 +8,10 @@ const CreatePostModal = ({ isOpen, onClose, addPost }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await postService.createPost({ title, content });
-    addPost(response.data);
+    const token = localStorage.getItem("token");
+    const response = await AuthService.addPost(token, title, content);
+    console.log(response, "res from modal");
+    addPost(response);
     setTitle("");
     setContent("");
     onClose();

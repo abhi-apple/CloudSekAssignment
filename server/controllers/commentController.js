@@ -32,7 +32,7 @@ exports.getCommentsByPostId = async (req, res) => {
 exports.updateComment = async (req, res) => {
   const { id } = req.params;
   const { text } = req.body;
-  // console.log(id, text, "check");
+
   try {
     const comment = await Comment.findById(id);
     if (!comment) {

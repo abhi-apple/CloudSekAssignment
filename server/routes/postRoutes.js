@@ -6,7 +6,6 @@ const {
 } = require("../controllers/postController");
 const router = express.Router();
 
-router.post("/", createPost);
 router.get("/", getPosts);
 router.get("/:id", getPostById);
 

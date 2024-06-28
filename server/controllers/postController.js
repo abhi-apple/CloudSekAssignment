@@ -1,16 +1,5 @@
 const Post = require("../models/postModel");
 
-exports.createPost = async (req, res) => {
-  const { title, content } = req.body;
-  try {
-    const post = new Post({ title, content });
-    await post.save();
-    res.status(201).json(post);
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-};
-
 exports.getPosts = async (req, res) => {
   try {
     const posts = await Post.find()
