@@ -8,7 +8,14 @@ const commentRoutes = require("./routes/commentRoutes");
 const app = express();
 
 connectDB();
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://cloud-sek-assignment-z98v.vercel.app/",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
+
 app.use(bodyParser.json());
 
 app.use("/api/posts", postRoutes);
