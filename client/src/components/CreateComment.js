@@ -30,7 +30,7 @@ const CreateComment = ({ postId, setPost }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="mt-6">
+    <form onSubmit={handleSubmit} className="mt-6 ">
       <RichTextEditor value={text} onChange={setText} />
       <button
         type="submit"

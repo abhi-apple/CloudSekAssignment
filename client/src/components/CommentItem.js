@@ -12,7 +12,7 @@ const CommentItem = ({ comment, onUpdate }) => {
   };
 
   return (
-    <div className="p-4 border rounded-md shadow-sm bg-white">
+    <div className="p-4 border rounded-md shadow-sm bg-gray-200">
       {isEditing ? (
         <div>
           <textarea

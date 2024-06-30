@@ -41,12 +41,14 @@ const HomePage = () => {
   };
 
   return (
-    <div className="p-4">
+    <div className="p-4 bg-gradient-to-r from-slate-500 to-slate-800">
       <div className="flex justify-between items-center mb-4">
-        <h1 className="text-3xl fixed top-2 left-2 font-bold">Posts</h1>
+        <h1 className="text-3xl text-white fixed top-2 left-2 font-bold">
+          Posts
+        </h1>
         <button
           onClick={openModal}
-          className="bg-blue-500 fixed right-2 top-2 text-white px-4 py-2 rounded"
+          className="bg-blue-500 hover:bg-blue-600 fixed right-2 top-2 text-white px-4 py-2 rounded"
         >
           Create Post
         </button>
@@ -60,7 +62,7 @@ const HomePage = () => {
       <div className="fixed bottom-4 left-4 z-10">
         <button
           onClick={handleLogout}
-          className="w-full text-white focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-red-400 hover:bg-primary-700 focus:ring-primary-800"
+          className="w-full text-white focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-red-400 hover:bg-red-600 focus:ring-primary-800"
         >
           Logout
         </button>
