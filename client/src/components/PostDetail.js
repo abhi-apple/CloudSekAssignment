@@ -26,7 +26,7 @@ const PostDetail = () => {
         <p className="text-gray-700 mb-4">{post.content}</p>
       </div>
       <div className="flex-1 overflow-auto mt-32 mb-16">
-        <h2 className="text-2xl font-bold mb-4">Comments</h2>
+        <h2 className="text-2xl text-white font-bold mb-4">Comments</h2>
         <CommentList comments={post.comments} onUpdate={fetchPost} />
       </div>
 
