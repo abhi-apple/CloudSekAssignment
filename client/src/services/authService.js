@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "https://cloud-sek-assignment.vercel.app";
+const API_URL = "http://localhost:8080";
 
 const register = async (email, password) => {
   try {
@@ -40,6 +40,7 @@ const addPost = async (token, title, content) => {
         },
       }
     );
+    console.log(response, "serv");
     return response.data;
   } catch (error) {
     throw error.response.data;

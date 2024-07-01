@@ -6,7 +6,7 @@ const PostItem = ({ post }) => {
     post.content.length > 100
       ? `${post.content.slice(0, 100)}...`
       : post.content;
-  const userName = localStorage.getItem("userName");
+  // const userName = localStorage.getItem("email");
   return (
     <div className="relative p-6 bg-gray-200 w-full max-w-lg mx-auto mb-6 border rounded-md shadow-sm">
       <h2 className="text-2xl font-bold mb-2">{post.title}</h2>
@@ -32,7 +32,7 @@ const PostItem = ({ post }) => {
         >
           Read more
         </Link>
-        {/* <span className="text-gray-700">Posted by {userName}</span> */}
+        <span className="text-gray-700">Posted by {post.userEmail}</span>
       </div>
       <div className="absolute top-4 right-4 bg-slate-600 text-white  px-2 py-1 rounded-full">
         {post.comments.length}{" "}

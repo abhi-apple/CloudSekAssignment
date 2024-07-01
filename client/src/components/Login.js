@@ -18,8 +18,10 @@ const LoginPage = () => {
     }));
   };
 
-  const handleLoginSuccess = (token) => {
-    localStorage.setItem("token", token);
+  const handleLoginSuccess = (resp) => {
+    localStorage.setItem("token", resp.token);
+    localStorage.setItem("email", resp.email);
+    console.log(resp, "login");
     navigate("/");
   };
 
@@ -30,7 +32,7 @@ const LoginPage = () => {
     try {
       const response = await AuthService.login(email, password);
       if (response.token) {
-        handleLoginSuccess(response.token);
+        handleLoginSuccess(response);
       }
     } catch (error) {
       setError(error.message || "Login failed");

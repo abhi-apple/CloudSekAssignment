@@ -20,9 +20,10 @@ const SignupPage = () => {
     }));
   };
 
-  const handleSignupSuccess = (token) => {
-    localStorage.setItem("token", token);
-
+  const handleSignupSuccess = (resp) => {
+    localStorage.setItem("token", resp.token);
+    localStorage.setItem("email", resp.email);
+    console.log(resp, "signup");
     navigate("/");
   };
   const handleSubmit = async (e) => {
@@ -39,7 +40,7 @@ const SignupPage = () => {
       const response = await AuthService.register(email, password);
       console.log("Signup successful", response);
       if (response.token) {
-        handleSignupSuccess(response.token);
+        handleSignupSuccess(response);
       }
     } catch (error) {
       setError(error.message || "Signup failed");

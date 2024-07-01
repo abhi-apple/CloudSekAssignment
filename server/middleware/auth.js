@@ -12,7 +12,7 @@ const authMiddleware = async (req, res, next) => {
 
   try {
     const decoded = jwt.verify(token, config.jwtSecret);
-
+    console.log(decoded, "bacl");
     req.user = decoded.user;
     next();
   } catch (err) {

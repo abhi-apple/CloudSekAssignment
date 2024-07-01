@@ -41,14 +41,14 @@ const HomePage = () => {
   };
 
   return (
-    <div className="p-4 bg-gradient-to-r from-slate-500 to-slate-800">
+    <div className="h-100vh bg-gradient-to-r from-slate-500 to-slate-800 flex flex-col">
       <div className="flex justify-between items-center mb-4">
-        <h1 className="text-3xl text-white fixed top-2 left-2 font-bold">
+        <h1 className="text-3xl z-10 text-white fixed top-2 left-2 font-bold">
           Posts
         </h1>
         <button
           onClick={openModal}
-          className="bg-blue-500 hover:bg-blue-600 fixed right-2 top-2 text-white px-4 py-2 rounded"
+          className="bg-blue-500 z-10 hover:bg-blue-600 fixed right-2 top-2 text-white px-4 py-2 rounded"
         >
           Create Post
         </button>

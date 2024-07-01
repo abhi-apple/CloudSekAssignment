@@ -30,6 +30,7 @@ exports.registerUser = async (req, res) => {
     const payload = {
       user: {
         id: user.id,
+        email: user.email,
       },
     };
 
@@ -39,7 +40,7 @@ exports.registerUser = async (req, res) => {
       { expiresIn: config.jwtExpiration },
       (err, token) => {
         if (err) throw err;
-        res.json({ token });
+        res.json({ token, email: user.email });
       }
     );
   } catch (err) {
@@ -67,6 +68,7 @@ exports.loginUser = async (req, res) => {
     const payload = {
       user: {
         id: user.id,
+        email: user.email,
       },
     };
 
@@ -76,7 +78,7 @@ exports.loginUser = async (req, res) => {
       { expiresIn: config.jwtExpiration },
       (err, token) => {
         if (err) throw err;
-        res.json({ token });
+        res.json({ token, email: user.email });
       }
     );
   } catch (err) {
@@ -86,14 +88,21 @@ exports.loginUser = async (req, res) => {
 };
 
 exports.addPostToUser = async (req, res) => {
-  const { id } = req.user;
+  const { id, email } = req.user;
+
   const { title, content } = req.body;
 
   try {
-    const newPost = new Post({ title, content });
+    const newPost = new Post({
+      title,
+      content,
+      user: id,
+      userEmail: email,
+    });
+
     await newPost.save();
 
-    const user = await User.findByIdAndUpdate(
+    await User.findByIdAndUpdate(
       id,
       {
         $push: { posts: newPost._id },
