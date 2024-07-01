@@ -6,7 +6,6 @@ const postRoutes = require("./routes/postRoutes");
 const commentRoutes = require("./routes/commentRoutes");
 const authRoutes = require("./routes/authRoutes");
 
-const authMiddleware = require("./middleware/auth");
 const app = express();
 
 connectDB();
